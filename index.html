@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            XHome Menue – MacOS Status Bar App for Home Servers & Devices
+        </title>
+        <meta
+            name="description"
+            content="XHome Menue is a MacOS status bar app that lets you open your home servers, HomeAssistant, routers, cameras, and more directly from the menu bar. One click on the icon – and your device is instantly accessible."
+        />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/logo.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="XHome Menue – MacOS Status Bar App" />
+        <meta
+            property="og:description"
+            content="Open HomeAssistant, routers, cameras, and more directly from the Mac menu bar. One click is all it takes!"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://xhomemenue.com" />
+        <meta property="og:image" content="./assets/logo/logo.png" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="XHome Menue – MacOS Status Bar App"
+        />
+        <meta
+            name="twitter:description"
+            content="Open HomeAssistant, routers, cameras, and more directly from the Mac menu bar. One click is all it takes!"
+        />
+        <meta name="twitter:image" content="./assets/logo/logo.png" />
+
+        <!-- Additional SEO -->
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Stephan Tomforde" />
+        <link rel="canonical" href="https://xhomemenue.com" />
+
+        <link rel="stylesheet" href="./css/tailwind-build.css" />
+        <link rel="stylesheet" href="css/index.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- GSAP and ScrollTrigger CDNs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="./index.js"></script>
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-black tw-text-white"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="/">
+                <img
+                    src="./assets/logo/logo.png"
+                    alt="XHome Menue Logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="#features">Features</a>
+                    <a class="header-links" href="#screenshots">Screenshots</a>
+                    <a class="header-links" href="#faq">FAQ</a>
+                    <a class="header-links" href="/impressum.html">Imprint</a>
+                    <a class="header-links" href="/datenschutz.html"
+                        >Privacy Policy</a
+                    >
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        href="https://apps.apple.com/de/app/id6739231166"
+                        aria-label="App Store"
+                        class="tw-rounded-full tw-bg-white tw-px-3 tw-py-2 tw-text-black tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span>On the Mac App Store</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="hero-section tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+            id="hero-section"
+        >
+            <div
+                class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
+            >
+                <div
+                    class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
+                >
+                    <div
+                        class="reveal-up gradient-text tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                    >
+                        <span>XHome Menue</span>
+                        <br />
+                        <span
+                            class="tw-text-3xl tw-font-normal tw-normal-case tw-block tw-mt-2"
+                            >Your servers & devices – one click away</span
+                        >
+                    </div>
+                    <div
+                        class="reveal-up tw-mt-10 tw-max-w-[600px] tw-p-2 tw-text-center tw-text-gray-300 max-lg:tw-max-w-full"
+                    >
+                        XHome Menue is the MacOS menu bar app that lets you open
+                        HomeAssistant, routers, cameras, or any web interface
+                        directly from the status bar. One click on the icon –
+                        and your device is instantly accessible.
+                    </div>
+
+                    <div
+                        class="reveal-up tw-mt-10 tw-flex tw-place-items-center tw-gap-4"
+                    >
+                        <a
+                            class="btn tw-bg-primary tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            href="https://apps.apple.com/de/app/id6739231166"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            On the Mac App Store
+                        </a>
+                        <a
+                            class="btn tw-flex tw-gap-2 !tw-bg-black !tw-text-white tw-transition-colors tw-duration-[0.3s] hover:!tw-bg-white hover:!tw-text-black"
+                            href="#screenshots"
+                        >
+                            <i class="bi bi-images"></i>
+                            <span>Screenshots</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up tw-relative tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-place-items-center"
+                    id="dashboard-container"
+                >
+                    <div
+                        class="tw-relative tw-max-w-[80%] tw-overflow-hidden tw-rounded-xl tw-bg-transparent max-md:tw-max-w-full"
+                        id="dashboard"
+                    >
+                        <img
+                            src="./assets/screenshots/mainview1.png"
+                            alt="XHome Menue main window screenshot"
+                            class="tw-h-full tw-w-full tw-object-contain tw-opacity-90 max-lg:tw-object-contain"
+                        />
+                    </div>
+                    <div
+                        class="hero-img-bg-grad tw-absolute tw-left-[20%] tw-top-5 tw-h-[200px] tw-w-[200px]"
+                    ></div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="features"
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+        >
+            <h2 class="reveal-up tw-text-3xl max-md:tw-text-xl">
+                What makes XHome Menue special?
+            </h2>
+
+            <div
+                class="reveal-up tw-mt-8 tw-flex tw-flex-wrap tw-gap-8 tw-justify-center"
+            >
+                <div
+                    class="tw-flex tw-flex-col tw-items-center tw-w-[320px] tw-bg-secondary tw-rounded-lg tw-p-6 tw-gap-4"
+                >
+                    <i
+                        class="bi bi-menu-button-wide tw-text-5xl tw-text-primary"
+                    ></i>
+                    <h3 class="tw-text-xl tw-font-semibold">Direct Access</h3>
+                    <p class="tw-text-gray-300 tw-text-center">
+                        Open HomeAssistant, routers, cameras, or any web
+                        interface directly from the Mac menu bar.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-flex-col tw-items-center tw-w-[320px] tw-bg-secondary tw-rounded-lg tw-p-6 tw-gap-4"
+                >
+                    <i
+                        class="bi bi-lightning-charge-fill tw-text-5xl tw-text-primary"
+                    ></i>
+                    <h3 class="tw-text-xl tw-font-semibold">Fast & Easy</h3>
+                    <p class="tw-text-gray-300 tw-text-center">
+                        One click on the status bar icon – your desired device
+                        opens instantly in the menu.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-flex-col tw-items-center tw-w-[320px] tw-bg-secondary tw-rounded-lg tw-p-6 tw-gap-4"
+                >
+                    <i
+                        class="bi bi-shield-lock-fill tw-text-5xl tw-text-primary"
+                    ></i>
+                    <h3 class="tw-text-xl tw-font-semibold">Secure & Local</h3>
+                    <p class="tw-text-gray-300 tw-text-center">
+                        Your data stays on your Mac. No cloud, no sharing – full
+                        control.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-flex-col tw-items-center tw-w-[320px] tw-bg-secondary tw-rounded-lg tw-p-6 tw-gap-4"
+                >
+                    <i class="bi bi-gear-fill tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-xl tw-font-semibold">
+                        Fully Customizable
+                    </h3>
+                    <p class="tw-text-gray-300 tw-text-center">
+                        Add as many hosts/servers as you like and customize
+                        names & icons to your needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="screenshots"
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+        >
+            <h2 class="reveal-up tw-text-3xl max-md:tw-text-xl">Screenshots</h2>
+            <div
+                class="reveal-up tw-mt-8 tw-flex tw-flex-wrap tw-gap-8 tw-justify-center"
+                id="gallery"
+            >
+                <a
+                    href="./assets/screenshots/mainview1.png"
+                    data-pswp-width="1440"
+                    data-pswp-height="900"
+                    target="_blank"
+                >
+                    <img
+                        src="./assets/screenshots/mainview1.png"
+                        alt="Main window screenshot 1"
+                        class="tw-w-[320px] tw-h-auto tw-object-contain tw-bg-secondary tw-rounded-lg tw-p-4 tw-shadow-lg"
+                        loading="lazy"
+                    />
+                </a>
+                <a
+                    href="./assets/screenshots/mainview2.png"
+                    data-pswp-width="1440"
+                    data-pswp-height="900"
+                    target="_blank"
+                >
+                    <img
+                        src="./assets/screenshots/mainview2.png"
+                        alt="Main window screenshot 2"
+                        class="tw-w-[320px] tw-h-auto tw-object-contain tw-bg-secondary tw-rounded-lg tw-p-4 tw-shadow-lg"
+                        loading="lazy"
+                    />
+                </a>
+                <a
+                    href="./assets/screenshots/menubar1.png"
+                    data-pswp-width="1440"
+                    data-pswp-height="900"
+                    target="_blank"
+                >
+                    <img
+                        src="./assets/screenshots/menubar1.png"
+                        alt="Menu bar screenshot 1"
+                        class="tw-w-[320px] tw-h-auto tw-object-contain tw-bg-secondary tw-rounded-lg tw-p-4 tw-shadow-lg"
+                        loading="lazy"
+                    />
+                </a>
+                <a
+                    href="./assets/screenshots/menubar2.png"
+                    data-pswp-width="1440"
+                    data-pswp-height="900"
+                    target="_blank"
+                >
+                    <img
+                        src="./assets/screenshots/menubar2.png"
+                        alt="Menu bar screenshot 2"
+                        class="tw-w-[320px] tw-h-auto tw-object-contain tw-bg-secondary tw-rounded-lg tw-p-4 tw-shadow-lg"
+                        loading="lazy"
+                    />
+                </a>
+                <a
+                    href="./assets/screenshots/menubar3.png"
+                    data-pswp-width="1440"
+                    data-pswp-height="900"
+                    target="_blank"
+                >
+                    <img
+                        src="./assets/screenshots/menubar3.png"
+                        alt="Menu bar screenshot 3"
+                        class="tw-w-[320px] tw-h-auto tw-object-contain tw-bg-secondary tw-rounded-lg tw-p-4 tw-shadow-lg"
+                        loading="lazy"
+                    />
+                </a>
+            </div>
+        </section>
+
+        <section
+            id="faq"
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+        >
+            <h3
+                class="tw-text-4xl tw-font-medium tw-text-gray-300 max-md:tw-text-2xl"
+            >
+                FAQ
+            </h3>
+            <div
+                class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4"
+            >
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Who is XHome Menue for?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        For everyone who wants quick and easy access to
+                        HomeAssistant, routers, cameras, or other web interfaces
+                        in their home network.
+                    </div>
+                </div>
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>How many hosts can I add?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        You can add as many hosts/servers as you like and name
+                        them individually.
+                    </div>
+                </div>
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Who provides support?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        Support and sales: Stephan Tomforde, Reith 27, 21698
+                        Brest, stephan@appbieger.com
+                    </div>
+                </div>
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span
+                            >Where can I find the imprint and privacy
+                            policy?</span
+                        >
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        <a href="/impressum.html" class="tw-underline"
+                            >Imprint</a
+                        >
+                        and
+                        <a href="/datenschutz.html" class="tw-underline"
+                            >Privacy Policy</a
+                        >
+                        can be found on their respective pages.
+                    </div>
+                </div>
+            </div>
+            <div
+                class="tw-mt-20 tw-flex tw-flex-col tw-place-items-center tw-gap-4"
+            >
+                <div class="tw-text-3xl max-md:tw-text-2xl">
+                    Still have questions?
+                </div>
+                <a
+                    href="mailto:stephan@appbieger.com"
+                    class="btn !tw-rounded-full !tw-border-[1px] !tw-border-solid !tw-border-gray-300 !tw-bg-transparent tw-transition-colors tw-duration-[0.3s]"
+                >
+                    Contact us
+                </a>
+            </div>
+        </section>
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-white max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+                <img
+                    src="./assets/logo/logo.png"
+                    alt="XHome Menue Logo"
+                    class="tw-max-w-[120px]"
+                />
+                <div>
+                    Stephan Tomforde<br />
+                    Reith 27<br />
+                    21698 Brest<br />
+                    <a href="mailto:stephan@appbieger.com" class="tw-underline"
+                        >stephan@appbieger.com</a
+                    >
+                </div>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Links</div>
+                <div class="tw-flex tw-flex-col tw-gap-2 tw-text-base">
+                    <a href="/impressum.html" class="footer-link">Imprint</a>
+                    <a href="/datenschutz.html" class="footer-link"
+                        >Privacy Policy</a
+                    >
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <h2 class="tw-text-3xl max-md:tw-text-xl">App</h2>
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="#features" class="footer-link">Features</a>
+                    <a href="#screenshots" class="footer-link">Screenshots</a>
+                    <a href="#faq" class="footer-link">FAQ</a>
+                    <a
+                        href="https://apps.apple.com/de/app/id6739231166"
+                        class="footer-link"
+                        target="_blank"
+                        rel="noopener"
+                        >Mac App Store</a
+                    >
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <h2 class="tw-text-3xl max-md:tw-text-xl">Support</h2>
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="mailto:stephan@appbieger.com" class="footer-link"
+                        >E-Mail Support</a
+                    >
+                    <a href="/impressum.html" class="footer-link">Imprint</a>
+                    <a href="/datenschutz.html" class="footer-link"
+                        >Privacy Policy</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <!-- Simple Lightbox -->
+        <script>
+            // Einfache Lightbox-Implementierung
+            function openLightbox(imageSrc, alt) {
+                const lightbox = document.createElement('div');
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(0, 0, 0, 0.9);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 100000;
+                    cursor: pointer;
+                `;
+
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = alt;
+                img.style.cssText = `
+                    max-width: 90vw;
+                    max-height: 90vh;
+                    object-fit: contain;
+                    border-radius: 8px;
+                `;
+
+                const closeBtn = document.createElement('div');
+                closeBtn.innerHTML = '×';
+                closeBtn.style.cssText = `
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    color: white;
+                    font-size: 40px;
+                    cursor: pointer;
+                    user-select: none;
+                `;
+
+                lightbox.appendChild(img);
+                lightbox.appendChild(closeBtn);
+                document.body.appendChild(lightbox);
+
+                function closeLightbox() {
+                    if (lightbox.parentNode) {
+                        document.body.removeChild(lightbox);
+                    }
+                }
+
+                lightbox.addEventListener('click', closeLightbox);
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeLightbox();
+                });
+
+                function handleEscape(e) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                        document.removeEventListener('keydown', handleEscape);
+                    }
+                }
+                document.addEventListener('keydown', handleEscape);
+            }
+
+            // Initialisiere Lightbox
+            document.addEventListener('DOMContentLoaded', function () {
+                const galleryLinks = document.querySelectorAll('#gallery a');
+
+                galleryLinks.forEach((link) => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const imgSrc = this.href;
+                        const imgAlt = this.querySelector('img')?.alt || '';
+                        openLightbox(imgSrc, imgAlt);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Impressum – XHome Menue MacOS App</title>
+        <meta
+            name="description"
+            content="Impressum und rechtliche Informationen zu XHome Menue, der MacOS Status Bar App von AppBieger."
+        />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/logo.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Impressum – XHome Menue MacOS App" />
+        <meta
+            property="og:description"
+            content="Impressum und rechtliche Informationen zu XHome Menue von AppBieger."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://xhomemenue.com/impressum.html" />
+        <meta property="og:image" content="./assets/logo/logo.png" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Impressum – XHome Menue MacOS App"
+        />
+        <meta
+            name="twitter:description"
+            content="Impressum und rechtliche Informationen zu XHome Menue von AppBieger."
+        />
+        <meta name="twitter:image" content="./assets/logo/logo.png" />
+
+        <!-- Additional SEO -->
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="German" />
+        <meta name="author" content="Stephan Tomforde" />
+        <link rel="canonical" href="https://xhomemenue.com/impressum.html" />
+
+        <link rel="stylesheet" href="./css/tailwind-build.css" />
+        <link rel="stylesheet" href="css/index.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- GSAP and ScrollTrigger CDNs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="./index.js"></script>
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-black tw-text-white"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="/">
+                <img
+                    src="./assets/logo/logo.png"
+                    alt="XHome Menue Logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="/#features">Features</a>
+                    <a class="header-links" href="/#screenshots">Screenshots</a>
+                    <a class="header-links" href="/#faq">FAQ</a>
+                    <a class="header-links" href="/impressum.html">Impressum</a>
+                    <a class="header-links" href="/datenschutz.html">Datenschutz</a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        href="https://apps.apple.com/de/app/id6739231166"
+                        aria-label="App Store"
+                        class="tw-rounded-full tw-bg-white tw-px-3 tw-py-2 tw-text-black tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span>Im Mac App Store</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[5%] tw-px-[10%] tw-mt-[100px]">
+            <div class="tw-w-full tw-max-w-[800px] tw-text-gray-300">
+                <h1 class="tw-text-4xl tw-font-medium tw-text-white tw-mb-8 max-md:tw-text-2xl">
+                    Impressum
+                </h1>
+
+                <div class="tw-prose tw-prose-invert tw-max-w-none">
+                    <h2 class="tw-text-2xl tw-font-semibold tw-text-white tw-mb-4">Angaben gemäß § 5 TMG</h2>
+                    
+                    <div class="tw-bg-secondary tw-rounded-lg tw-p-6 tw-mb-6">
+                        <p class="tw-text-lg tw-mb-4">
+                            <strong class="tw-text-white">AppBieger</strong><br>
+                            Stephan Tomforde<br>
+                            Reith 27<br>
+                            21698 Brest<br>
+                            Deutschland
+                        </p>
+                        
+                        <p class="tw-text-lg">
+                            <strong class="tw-text-white">Kontakt:</strong><br>
+                            Telefon: (04762) 183107<br>
+                            E-Mail: <a href="mailto:stephan@appbieger.com" class="tw-text-primary hover:tw-underline">stephan@appbieger.com</a>
+                        </p>
+                    </div>
+
+                    <h2 class="tw-text-2xl tw-font-semibold tw-text-white tw-mb-4 tw-mt-8">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+                    
+                    <div class="tw-bg-secondary tw-rounded-lg tw-p-6 tw-mb-6">
+                        <p class="tw-text-lg">
+                            Stephan Tomforde<br>
+                            Reith 27<br>
+                            21698 Brest<br>
+                            Deutschland
+                        </p>
+                    </div>
+
+                    <h2 class="tw-text-2xl tw-font-semibold tw-text-white tw-mb-4 tw-mt-8">Haftungsausschluss</h2>
+
+                    <h3 class="tw-text-xl tw-font-semibold tw-text-white tw-mb-3">Haftung für Inhalte</h3>
+                    <p class="tw-mb-4">
+                        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                    </p>
+                    <p class="tw-mb-6">
+                        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                    </p>
+
+                    <h3 class="tw-text-xl tw-font-semibold tw-text-white tw-mb-3">Haftung für Links</h3>
+                    <p class="tw-mb-4">
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                    </p>
+                    <p class="tw-mb-6">
+                        Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                    </p>
+
+                    <h3 class="tw-text-xl tw-font-semibold tw-text-white tw-mb-3">Urheberrecht</h3>
+                    <p class="tw-mb-4">
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                    </p>
+                    <p class="tw-mb-6">
+                        Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                    </p>
+
+                    <div class="tw-bg-primary tw-bg-opacity-10 tw-border tw-border-primary tw-rounded-lg tw-p-6 tw-mt-8">
+                        <h3 class="tw-text-xl tw-font-semibold tw-text-white tw-mb-3">Fragen oder Anregungen?</h3>
+                        <p class="tw-mb-4">
+                            Bei Fragen zu diesem Impressum oder zu XHome Menue kontaktieren Sie uns gerne:
+                        </p>
+                        <a
+                            href="mailto:stephan@appbieger.com"
+                            class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-primary tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-transition-transform tw-duration-[0.3s] hover:tw-scale-105"
+                        >
+                            <i class="bi bi-envelope"></i>
+                            E-Mail senden
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-white max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+                <img
+                    src="./assets/logo/logo.png"
+                    alt="XHome Menue Logo"
+                    class="tw-max-w-[120px]"
+                />
+                <div>
+                    Stephan Tomforde<br />
+                    Reith 27<br />
+                    21698 Brest<br />
+                    <a href="mailto:stephan@appbieger.com" class="tw-underline"
+                        >stephan@appbieger.com</a
+                    >
+                </div>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Links</div>
+                <div class="tw-flex tw-flex-col tw-gap-2 tw-text-base">
+                    <a href="/impressum.html" class="footer-link">Impressum</a>
+                    <a href="/datenschutz.html" class="footer-link">Datenschutz</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <h2 class="tw-text-3xl max-md:tw-text-xl">App</h2>
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="/#features" class="footer-link">Features</a>
+                    <a href="/#screenshots" class="footer-link">Screenshots</a>
+                    <a href="/#faq" class="footer-link">FAQ</a>
+                    <a
+                        href="https://apps.apple.com/de/app/id6739231166"
+                        class="footer-link"
+                        target="_blank"
+                        rel="noopener"
+                        >Mac App Store</a
+                    >
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <h2 class="tw-text-3xl max-md:tw-text-xl">Support</h2>
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="mailto:stephan@appbieger.com" class="footer-link"
+                        >E-Mail Support</a
+                    >
+                    <a href="/impressum.html" class="footer-link">Impressum</a>
+                    <a href="/datenschutz.html" class="footer-link"
+                        >Datenschutz</a
+                    >
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
