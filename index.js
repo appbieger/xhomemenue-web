@@ -60,28 +60,36 @@ window.onload = function () {
             }
         });
     }
-};
 
-// FAQ Accordion Funktionalität
-const faqAccordions = document.querySelectorAll('.faq-accordion');
+    // FAQ Accordion Funktionalität
+    const faqAccordions = document.querySelectorAll('.faq-accordion');
 
-faqAccordions.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        this.classList.toggle('active');
-
-        const content = this.nextElementSibling;
-
-        if (content) {
-            if (content.style.maxHeight === '200px') {
-                content.style.maxHeight = '0px';
-                content.style.padding = '0px 18px';
-            } else {
-                content.style.maxHeight = '200px';
-                content.style.padding = '20px 18px';
+    faqAccordions.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            // Toggle active class
+            this.classList.toggle('active');
+            
+            // Toggle plus/minus icon
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('bi-plus');
+                icon.classList.toggle('bi-dash');
             }
-        }
+
+            // Get the content element
+            const content = this.nextElementSibling;
+            if (content) {
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.padding = '0px 18px';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.padding = '20px 18px';
+                }
+            }
+        });
     });
-});
+};
 
 // Header Toggle Funktionalität (falls benötigt)
 function toggleHeader() {

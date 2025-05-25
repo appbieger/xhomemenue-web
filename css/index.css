@@ -179,7 +179,6 @@ header > .collapsible-header{
 
 
 /* Style for the collapsible content such as faq commonly known as: accordion */
-
 .faq-accordion {
     background-color: inherit;
     color: #f2f2f2;
@@ -189,23 +188,32 @@ header > .collapsible-header{
     border: none;
     text-align: left;
     outline: none;
-    transition: height 0.4s;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-accordion i {
+    transition: transform 0.4s ease;
+}
+
+.faq-accordion.active i {
+    transform: rotate(45deg);
 }
 
 .faq .content {
     padding: 0px 18px;
     color: #e4e4e4;
-    height: max-content;
-    overflow: hidden;
     background-color: transparent;
     text-align: justify;
-    max-height: 0px;
-    transition: max-height 0.4s, padding 0.4s;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
 }
 
-.faq-accordion .active,
 .faq-accordion:hover {
-    /* background-color: #2e2c2c; */
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 @media not all and (min-width: 1024px) {
